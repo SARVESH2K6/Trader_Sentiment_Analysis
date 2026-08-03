@@ -1,0 +1,41 @@
+## Bonus — Predictive Model: Next-Day Profitability
+
+Train size: 1187, Test size: 396
+Baseline (majority class) accuracy: 0.698
+Test ROC-AUC: 0.647
+
+```
+              precision    recall  f1-score   support
+
+           0       0.43      0.57      0.49       120
+           1       0.78      0.66      0.72       276
+
+    accuracy                           0.64       396
+   macro avg       0.60      0.62      0.60       396
+weighted avg       0.67      0.64      0.65       396
+
+```
+
+**Feature importances:**
+|                    |     0 |
+|:-------------------|------:|
+| trades             | 0.18  |
+| avg_trade_size_usd | 0.166 |
+| total_pnl          | 0.154 |
+| total_volume_usd   | 0.126 |
+| sentiment_value    | 0.126 |
+| long_short_ratio   | 0.117 |
+| win_rate           | 0.097 |
+| sent_Fear          | 0.017 |
+| sent_Greed         | 0.01  |
+| sent_Neutral       | 0.008 |
+
+## Bonus — Trader Archetype Clustering (k=3)
+
+|   archetype |   total_trades |   avg_trade_size_usd |   avg_daily_pnl |   pnl_std |   avg_win_rate |   trades_per_active_day |        total_pnl |
+|------------:|---------------:|---------------------:|----------------:|----------:|---------------:|------------------------:|-----------------:|
+|           0 |        5035.31 |              8349.72 |         4187.22 |   16865   |           0.84 |                   82.07 | 237173           |
+|           1 |        3818    |             33569.1  |        66676.2  |  150402   |           0.77 |                  159.08 |      1.60023e+06 |
+|           2 |       30688    |              3144.45 |        19979.8  |   50193.6 |           0.88 |                  531.8  | 888122           |
+
+Cluster sizes: {0: 29, 2: 2, 1: 1}
